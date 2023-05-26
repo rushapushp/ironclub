@@ -1,0 +1,266 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@import 'animate.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+
+@layer base{
+    html {
+        
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
+
+
+.header {
+  font-family: 'Montserrat', sans-serif;
+  
+} 
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  line-height: normal;
+  
+  
+
+  
+} 
+
+.link {
+    display: flex;
+    flex-direction: column;
+  
+    font-weight: 700;
+    font-size: 16px;
+    height: 28px;
+  
+  
+    overflow: hidden;
+  
+    position: relative;
+  
+    z-index: 0;
+  }
+  
+  .link::after {
+    content: '';
+    position: absolute;
+    background: white;
+    width: 100%;
+    height: 1px;
+  
+    transform: translateY(25px) translateX(-140px);
+  
+    transition: transform 200ms ease-in-out;
+  
+    z-index: 1;
+  }
+  
+  .link:hover.link::after {
+    transform: translateY(25px) translateX(0px);
+  }
+
+
+
+  .background {
+    background-image: url("./assets/img/mainPicture.jpg");
+    background-position: center;
+    background-size: cover;
+ }
+
+ .backgroundAuth {
+  background-image: url("./assets/img/authBg.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+
+ .backgroundtrainers {
+  background-image: url("./assets/img/fontrainers.jpg");
+  background-position: center;
+  background-size: contain;
+  
+}
+
+ .active{
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  transition: 0.2s linear;
+  display: flex;
+  justify-content:stretch;
+  align-items: center;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  z-index: 40;
+  box-shadow: 0 2px 5px -1px rgba(0, 0, 0, .08);
+  /* padding: 0 7%; */
+}
+.hidden{
+  height: 50px;
+  width: 100%;
+  z-index: 40;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  box-shadow: 0 2px 5px -1px rgba(0, 0, 0, .08);
+  position: absolute;
+  top: -80px;
+  transition: 0.2s linear;
+
+}
+
+.starter:hover{
+  animation: fadeInRight;
+}
+
+
+.traineranimleft{
+  animation: fadeInLeft; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 1s; /* don't forget to set a duration! */
+  --animate-delay: 0.5s;
+}
+
+
+.traineranimdown{
+  animation: fadeInDown; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 1s; /* don't forget to set a duration! */
+  --animate-delay: 0.5s;
+}
+
+
+.glass{
+  background: linear-gradient(130deg, rgba(58, 58, 58, 0.404), rgba(63, 63, 63, 0.315));
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(25px);
+  border:2px solid rgba(41, 41, 41, 0.18);
+  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.37);
+}
+
+
+.box1 {
+  animation: fromLeftToRightBox1 500ms forwards ease-in-out;
+  animation-play-state: paused;
+
+  transform: translateX(-850px);
+  opacity: 0;
+}
+
+.box2 {
+  animation: fromLeftToRightBox2 500ms forwards ease-in-out;
+  animation-play-state: paused;
+
+  transform: translateX(-960px);
+  opacity: 0;
+}
+
+.box3 {
+  animation: fromLeftToRightBox3 500ms forwards ease-in-out;
+  animation-play-state: paused;
+
+  transform: translateX(-960px);
+
+  opacity: 0;
+}
+
+.box4 {
+  animation: fromLeftToRightBox4 500ms forwards ease-in-out;
+  animation-play-state: paused;
+
+  transform: translateX(-960px);
+
+  opacity: 0;
+}
+
+.box5 {
+  animation: fromLeftToRightBox5 500ms forwards ease-in-out;
+  animation-play-state: paused;
+
+  transform: translateY(-850px);
+
+  opacity: 0;
+}
+
+.starter:hover .box1 {
+  animation-play-state: running;
+}
+
+.starter:hover .box2 {
+  animation-play-state: running;
+}
+
+.starter:hover .box3 {
+  animation-play-state: running;
+}
+
+.starter:hover .box4 {
+  animation-play-state: running;
+}
+
+.starter:hover .box5 {
+  animation-play-state: running;
+}
+
+@keyframes fromLeftToRightBox1 {
+  from {
+    opacity: 0;
+    transform: translateX(-850px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes fromLeftToRightBox2 {
+  from {
+    opacity: 0;
+    transform: translateX(-960px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes fromLeftToRightBox3 {
+  from {
+    opacity: 0;
+    transform: translateX(960px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes fromLeftToRightBox4 {
+  from {
+    opacity: 0;
+    transform: translateX(850px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes fromLeftToRightBox5 {
+  from {
+    opacity: 0;
+    transform: translateY(850px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
